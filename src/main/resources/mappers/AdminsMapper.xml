@@ -6,6 +6,6 @@
         select * from admins
     </select>
     <select id="findOne" resultType="top.clyde.splitos.pojo.Admins">
-        select * from admins where id = 1
+        select * from admins where aid = 1
     </select>
 </mapper>

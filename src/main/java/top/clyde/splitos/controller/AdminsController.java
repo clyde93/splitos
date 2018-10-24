@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import top.clyde.splitos.mapper.AdminsMapper;
 import top.clyde.splitos.pojo.Admins;
+import top.clyde.splitos.service.AdminsService;
 
 import java.util.List;
 
@@ -15,16 +15,17 @@ import java.util.List;
 @SuppressWarnings("all")
 public class AdminsController {
     @Autowired
-    public AdminsMapper adminsMapper;
+    public AdminsService adminsService;
 
     @GetMapping("/all")
     @ResponseBody
     public List<Admins> getAll(){
-        return  adminsMapper.findAll();
+        return  adminsService.findAll();
     }
     @GetMapping("/one")
+    @ResponseBody
     public Admins getone(){
-        return  adminsMapper.findOne();
+        return  adminsService.findOne();
     }
 
 }
